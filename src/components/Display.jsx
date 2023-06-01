@@ -268,7 +268,7 @@ const Display = () => {
 
 					} else {
 						pc_pick.style.cssText = 'background-color:#fff ;transform:translate(30em , -4.7em)';
-						picks[0].style.cssText = 'transform:translate(-16em, 4em)';
+						picks[0].style.cssText = 'transform:translate(-16em, -4em)';
 					}
 
 					/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
