@@ -1,0 +1,780 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Exo+2:wght@500&family=Phudu:wght@600&family=Roboto&family=Teko:wght@600&display=swap");
+@keyframes instructions {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes loser {
+  0% {
+    text-shadow: 0 0 10px #e27f7f, 0 0 40px #e27f7f, 0 0 40px #e27f7f, 0 0 40px #e27f7f;
+  }
+  50% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0 0 10px #e27f7f, 0 0 40px #e27f7f, 0 0 40px #e27f7f, 0 0 40px #e27f7f;
+  }
+}
+@keyframes winner {
+  0% {
+    text-shadow: 0 0 10px #168a28, 0 0 40px #168a28, 0 0 40px #168a28, 0 0 40px #168a28;
+  }
+  50% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0 0 10px #168a28, 0 0 40px #168a28, 0 0 40px #168a28, 0 0 40px #168a28;
+  }
+}
+@keyframes load-icon {
+  from {
+    transform: scale(0.1);
+  }
+}
+@keyframes header {
+  0% {
+    transform: translateX(-10em);
+  }
+  50% {
+    transform: translateX(5em);
+  }
+  70% {
+    transform: translateX(-5em);
+  }
+  100% {
+    transform: translateX(0em);
+  }
+}
+@keyframes start-game {
+  0% {
+    transform: translate(10em, -5em);
+    background-color: #4a4a4a;
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(20em, -5em);
+    background-color: #3e3e3e;
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(5em, -5em);
+    background-color: #3e3e3e;
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(16em, -5em);
+    background-color: #3e3e3e;
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(22em, -5em);
+    background-color: #fff;
+    opacity: 1;
+  }
+}
+@keyframes pc_pick_text {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes result-match {
+  0% {
+    transform: translateY(20em) scale(0.2);
+  }
+  50% {
+    transform: translateY(-10em) scale(0.7);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes credits {
+  0% {
+    transform: translateY(20em);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-5em);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes btn-rules {
+  0% {
+    transform: scale(1.2);
+  }
+  10% {
+    transform: scale(1.4);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1.4);
+  }
+  80% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes up-down {
+  to {
+    transform: translateY(-1em);
+  }
+  from {
+    transform: translateY(0.1em);
+  }
+}
+@keyframes reload {
+  0% {
+    transform: rotate(4deg);
+  }
+  10% {
+    transform: rotate(-4deg);
+  }
+  20% {
+    transform: rotate(4deg);
+  }
+  30% {
+    transform: rotate(-4deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* Media Queris */
+@media (min-width: 1600px) {
+  #header {
+    transform: scale(1.2) translateY(-1em);
+  }
+  #display {
+    transform: scale(1.3);
+  }
+  .rules-open {
+    transform: scale(1.4);
+  }
+  .rules-div {
+    transform: scale(2) translateY(-2em) !important;
+  }
+  .attribution {
+    font-size: 1.5em !important;
+  }
+}
+@media (max-width: 900px) {
+  #header {
+    width: 90% !important;
+    transition: all 600ms;
+  }
+  #display {
+    transform: scale(0.8) translate(0, -3em);
+    transition: all 600ms;
+  }
+}
+@media (max-width: 700px) {
+  #display {
+    transform: translateY(-1em) scale(0.7);
+  }
+  .attribution {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  #display .game-results {
+    top: 5em;
+    transform: scale(1.8) !important;
+  }
+  #display .pc_pick {
+    animation: none !important;
+  }
+  #display .pc_pick .pc_pick_text {
+    display: block !important;
+    animation: none !important;
+  }
+  .rules-open {
+    width: 80%;
+    position: absolute;
+    right: 3em;
+  }
+  .rules-open:hover::after {
+    background-color: #788ee8;
+    width: 40em !important;
+    transform: translate(-8em, -0.3em);
+    transition: all 400ms !important;
+    z-index: -1;
+  }
+}
+@media (max-width: 450px) {
+  #display {
+    transform: scale(0.6) !important;
+  }
+}
+html,
+body {
+  margin: 0;
+  color: white;
+  overflow: hidden;
+}
+html #main,
+body #main {
+  background: radial-gradient(circle, #1f3756, #141539);
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+html #main #header,
+body #main #header {
+  border: 3px solid #606e85;
+  border-radius: 1em;
+  width: 55vw;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+html #main #header .header-list,
+body #main #header .header-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: start;
+  list-style: none;
+  font-weight: bolder;
+  font-size: 1.5em;
+  font-family: "Phudu", cursive;
+}
+html #main #header .header-list .paper,
+body #main #header .header-list .paper {
+  margin-top: -0.4em;
+}
+html #main #header .header-list .scissors,
+body #main #header .header-list .scissors {
+  margin-top: -0.4em;
+}
+html #main #header .header-score,
+body #main #header .header-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 13em;
+  background-color: #fff;
+  margin: 1.2em 2em;
+  border-radius: 1em;
+}
+html #main #header .header-score :not(.h2),
+html #main #header .header-score :not(.score),
+body #main #header .header-score :not(.h2),
+body #main #header .header-score :not(.score) {
+  margin: 0;
+  border: none;
+}
+html #main #header .header-score .container,
+body #main #header .header-score .container {
+  display: flex;
+  flex-direction: row;
+}
+html #main #header .header-score .container .h2,
+body #main #header .header-score .container .h2 {
+  color: #2a46c0;
+  font-weight: lighter;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  font-family: "Phudu", cursive;
+  font-weight: bolder;
+  transform: translateY(0.7em);
+}
+html #main #header .header-score .container .score,
+body #main #header .header-score .container .score {
+  font-size: 3em;
+  color: rgba(20, 20, 20, 0.6862745098);
+  font-weight: bolder;
+  font-family: "Phudu", cursive;
+}
+html #main #header .header-score button,
+body #main #header .header-score button {
+  border-radius: 0 0 1em 1em;
+  background-color: #505cb8;
+  color: #fff;
+  font-family: "Phudu", cursive;
+  padding: 0.5em 0;
+  cursor: pointer;
+}
+html #main #display,
+body #main #display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("./assets/bg-triangle.svg") no-repeat center center;
+  background-size: contain;
+  gap: 8em;
+  transition: all 600ms;
+}
+html #main #display .game-results,
+body #main #display .game-results {
+  color: #fff;
+  position: absolute;
+  transform: translateY(-2em) translateX(1em);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html #main #display .game-results p,
+body #main #display .game-results p {
+  font-family: "Concert One", cursive;
+  font-size: 3.2em;
+  transform: translateY(0.7em);
+  letter-spacing: 5px;
+}
+html #main #display .game-results .btn-reload,
+body #main #display .game-results .btn-reload {
+  width: 100%;
+  color: #fff;
+  background: inherit;
+  border: 1px solid #fff;
+  padding: 1.2em 3em;
+  font-family: "Phudu", cursive;
+  border-radius: 0.7em;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  cursor: pointer;
+  animation: reload 700ms linear alternate-reverse infinite;
+}
+html #main #display .game-results .btn-reload:hover,
+body #main #display .game-results .btn-reload:hover {
+  color: #111;
+  background-color: #fff;
+  transform: translate(-0.5em, -0.3em);
+  box-shadow: 1em 1em 0.5em rgba(17, 17, 17, 0.4862745098);
+  animation: none;
+  font-weight: bolder;
+  transition: all 600ms;
+}
+html #main #display .instructions,
+body #main #display .instructions {
+  font-family: "Phudu", cursive;
+  font-size: 1.2em;
+  position: absolute;
+  width: max-content;
+  animation: instructions 1.5s forwards infinite;
+}
+html #main #display .pc_pick,
+body #main #display .pc_pick {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translate(13em, -5em);
+  height: 7.2em;
+  width: 7.2em;
+  border-radius: 50%;
+  transition: all 1s;
+  cursor: default;
+}
+html #main #display .pc_pick p,
+body #main #display .pc_pick p {
+  display: none;
+  font-size: 1.7em;
+  width: max-content;
+  position: absolute;
+  top: -4em;
+  font-family: "Teko", sans-serif;
+  color: #fff;
+}
+html #main #display .pc_pick .btn-start,
+body #main #display .pc_pick .btn-start {
+  font-size: 1.5em;
+  font-family: "Concert One", cursive;
+  color: #fff;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  animation: up-down 400ms infinite alternate-reverse;
+}
+html #main #display .pc_pick .btn-start:hover,
+body #main #display .pc_pick .btn-start:hover {
+  animation: none;
+}
+html #main #display .pc_pick .btn-start::before,
+body #main #display .pc_pick .btn-start::before {
+  content: "?";
+  display: block;
+  position: absolute;
+  left: 3em;
+  color: #798be9;
+}
+html #main #display .pc_pick .btn-start:hover::before,
+body #main #display .pc_pick .btn-start:hover::before {
+  content: "";
+}
+html #main #display .pc_pick .btn-start::after,
+body #main #display .pc_pick .btn-start::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 1.8em;
+  bottom: 1.8em;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 300ms;
+}
+html #main #display .pc_pick .btn-start:hover::after,
+body #main #display .pc_pick .btn-start:hover::after {
+  background: radial-gradient(circle, #0f1824, #4865f4);
+  transform: scale(4.6);
+  opacity: 1;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.4156862745);
+}
+html #main #display .display-papper,
+body #main #display .display-papper {
+  border-radius: 50%;
+  padding: 1em;
+  font-size: 1.2em;
+  border: 1.3em solid #4865f4;
+  box-shadow: 5px -4px 2px #46559e, inset 7px -4px 3px rgba(0, 0, 0, 0.2980392157);
+  transform: translateX(-7em);
+  cursor: pointer;
+  transition: all 400ms;
+}
+html #main #display .display-papper > p,
+body #main #display .display-papper > p {
+  color: #fff;
+  font-size: 1.7em;
+  width: max-content;
+  position: absolute;
+  top: -4.5em;
+  left: -0.5em;
+  font-family: "Teko", sans-serif;
+}
+html #main #display .display-scissors,
+body #main #display .display-scissors {
+  border-radius: 50%;
+  padding: 1em;
+  font-size: 1.2em;
+  border: 1.3em solid #eca922;
+  box-shadow: 3px 5px 2px #6c501a, inset 3px 8px 3px rgba(0, 0, 0, 0.2980392157);
+  transform: translateX(7em);
+  cursor: pointer;
+  transition: all 400ms;
+}
+html #main #display .display-scissors > p,
+body #main #display .display-scissors > p {
+  color: #fff;
+  font-size: 1.7em;
+  width: max-content;
+  position: absolute;
+  top: -4.5em;
+  left: -0.5em;
+  font-family: "Teko", sans-serif;
+}
+html #main #display .display-rock,
+body #main #display .display-rock {
+  border-radius: 50%;
+  padding: 1em;
+  font-size: 1.2em;
+  border: 1.3em solid #dd405d;
+  box-shadow: -5px 4px 2px #631a26, inset -8px 2px 3px rgba(0, 0, 0, 0.2980392157);
+  cursor: pointer;
+  transform: translateY(2em);
+  transition: all 400ms;
+}
+html #main #display .display-rock > p,
+body #main #display .display-rock > p {
+  color: #fff;
+  font-size: 1.7em;
+  width: max-content;
+  position: absolute;
+  top: -4.5em;
+  left: -0.7em;
+  font-family: "Teko", sans-serif;
+}
+html #main #rules,
+body #main #rules {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+html #main #rules .rules-div,
+body #main #rules .rules-div {
+  display: none;
+}
+html #main #rules .rules-div .rules-h1,
+body #main #rules .rules-div .rules-h1 {
+  color: rgba(20, 20, 20, 0.6862745098);
+  font-family: "Phudu", cursive;
+}
+html #main #rules .rules-div .rules-btns,
+body #main #rules .rules-div .rules-btns {
+  display: flex;
+}
+html #main #rules .rules-div .rules-btns .papper,
+body #main #rules .rules-div .rules-btns .papper {
+  border: 10px solid rgba(20, 20, 20, 0.6862745098);
+  background: #aeb1b5;
+  border-radius: 50%;
+  padding: 0.9em;
+  scale: 0.8;
+  opacity: 0.4;
+}
+html #main #rules .rules-div .rules-btns .scissors,
+body #main #rules .rules-div .rules-btns .scissors {
+  border: 10px solid rgba(20, 20, 20, 0.6862745098);
+  background: #aeb1b5;
+  border-radius: 50%;
+  padding: 0.9em;
+  scale: 0.8;
+  opacity: 0.4;
+}
+html #main #rules .rules-div .rules-btns .rock,
+body #main #rules .rules-div .rules-btns .rock {
+  border: 10px solid rgba(20, 20, 20, 0.6862745098);
+  background: #aeb1b5;
+  border-radius: 50%;
+  padding: 0.9em;
+  scale: 0.8;
+  opacity: 0.4;
+  transform: translateY(10em);
+}
+html #main #rules .rules-div .rules-close,
+body #main #rules .rules-div .rules-close {
+  border: none;
+  background-color: inherit;
+  font-weight: bolder;
+  font-size: 1.2em;
+  color: rgba(96, 110, 133, 0.462745098);
+  cursor: pointer;
+}
+html #main #rules .rules-div .rules-close:hover,
+body #main #rules .rules-div .rules-close:hover {
+  color: #f25d5d;
+  transition: all 300ms;
+  font-size: 1.4em;
+}
+html #main #rules .rules-div .row_first,
+body #main #rules .rules-div .row_first {
+  border-radius: 1em;
+  background-color: #b1b1b1;
+  transform: translate(3em, -3em) rotate(-50deg);
+}
+html #main #rules .rules-div .row_first .a,
+body #main #rules .rules-div .row_first .a {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  width: 3em;
+  transform: translateX(-2em);
+}
+html #main #rules .rules-div .row_first .a::after,
+body #main #rules .rules-div .row_first .a::after {
+  content: "Beats";
+  position: absolute;
+  color: #b1b1b1;
+  font-family: "Phudu", cursive;
+  transform: translate(1em, 2em) rotate(50deg);
+}
+html #main #rules .rules-div .row_first .b,
+body #main #rules .rules-div .row_first .b {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  transform: rotate(40deg) translateX(0.1em) translateY(-0.4em);
+}
+html #main #rules .rules-div .row_first .c,
+body #main #rules .rules-div .row_first .c {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  transform: rotate(-40deg) translateX(0.1em) translateY(0.4em);
+}
+html #main #rules .rules-div .row_second,
+body #main #rules .rules-div .row_second {
+  border-radius: 1em;
+  background-color: #b1b1b1;
+  transform: translate(-0.5em, -10em) rotate(180deg);
+}
+html #main #rules .rules-div .row_second .a,
+body #main #rules .rules-div .row_second .a {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  width: 3em;
+  transform: translateX(-2em);
+}
+html #main #rules .rules-div .row_second .a::after,
+body #main #rules .rules-div .row_second .a::after {
+  content: "Beats";
+  position: absolute;
+  color: #b1b1b1;
+  font-family: "Phudu", cursive;
+  transform: translate(0.5em, 2em) rotate(180deg);
+}
+html #main #rules .rules-div .row_second .b,
+body #main #rules .rules-div .row_second .b {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  transform: rotate(40deg) translateX(0.1em) translateY(-0.4em);
+}
+html #main #rules .rules-div .row_second .c,
+body #main #rules .rules-div .row_second .c {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  transform: rotate(-40deg) translateX(0.1em) translateY(0.4em);
+}
+html #main #rules .rules-div .row_thrid,
+body #main #rules .rules-div .row_thrid {
+  border-radius: 1em;
+  background-color: #b1b1b1;
+  transform: translate(-3em, -8em) rotate(40deg);
+}
+html #main #rules .rules-div .row_thrid .a,
+body #main #rules .rules-div .row_thrid .a {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  width: 3em;
+  transform: translateX(-2em);
+}
+html #main #rules .rules-div .row_thrid .a::after,
+body #main #rules .rules-div .row_thrid .a::after {
+  content: "Beats";
+  position: absolute;
+  color: #b1b1b1;
+  font-family: "Phudu", cursive;
+  transform: translate(-1em, 2em) rotate(-40deg);
+}
+html #main #rules .rules-div .row_thrid .b,
+body #main #rules .rules-div .row_thrid .b {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  transform: rotate(40deg) translateX(0.1em) translateY(-0.4em);
+}
+html #main #rules .rules-div .row_thrid .c,
+body #main #rules .rules-div .row_thrid .c {
+  position: absolute;
+  display: block;
+  height: 0.2em;
+  width: 0.7em;
+  transform: rotate(-40deg) translateX(0.1em) translateY(0.4em);
+}
+html #main #rules .rules-open,
+body #main #rules .rules-open {
+  position: absolute;
+  bottom: 2em;
+  right: 3em;
+  color: white;
+  background-color: inherit;
+  border: 1px solid #fff;
+  border-radius: 0.6em;
+  padding: 0.7em 5em;
+  font-family: "Phudu", cursive;
+  cursor: pointer;
+  overflow: hidden;
+}
+html #main #rules .rules-open::after,
+body #main #rules .rules-open::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  transform: translate(-5em, -0.3em) scale(0.8);
+  width: 5em;
+  height: 3.2em;
+  background-color: #fff;
+}
+html #main #rules .rules-open:hover::after,
+body #main #rules .rules-open:hover::after {
+  background-color: #788ee8;
+  width: 27.7em;
+  transform: translate(-8em, -0.3em);
+  transition: all 600ms;
+  z-index: -1;
+}
+html #main #rules .rules-open:hover,
+body #main #rules .rules-open:hover {
+  color: #111;
+  z-index: 1000;
+  border: 1px solid #111;
+  transition: all 1.4s;
+}
+html .attribution,
+body .attribution {
+  text-align: center;
+  position: absolute;
+  bottom: 1em;
+  left: 0.5em;
+  font-size: 1em;
+  color: white;
+}
+html .attribution a,
+body .attribution a {
+  color: #788ee8;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */
