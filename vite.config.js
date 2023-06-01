@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'https://SebaPerez90.github.io/Rock-Papper-Scissors/'
+  base: 'https://SebaPerez90.github.io/Rock-Papper-Scissors'
 })
